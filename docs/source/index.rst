@@ -1,3 +1,7 @@
+.. image:: ./.static/img/threshold_logo_purple.png
+    :target: ./.static/img/threshold_logo_purple.png
+
+
 Welcome to Interim PRE Application documentation!
 =================================================
 
