@@ -20,8 +20,11 @@ running the PRE node client.
 Nodes are expected to remain online to provide uninterrupted on-demand PRE
 services to the network of users.
 
-In the traditional NuCypher parlance, ``Worker`` can be used interchangeably
-with the new Threshold ``Operator`` term.
+
+.. note::
+
+    In the traditional NuCypher Network parlance, ``Worker`` can be used interchangeably
+    with the new Threshold Network ``Operator`` term.
 
 
 Contents
