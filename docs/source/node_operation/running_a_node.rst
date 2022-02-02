@@ -1,99 +1,12 @@
 Running a PRE Node
 ==================
 
-Minimum System Requirements
----------------------------
-
-* Debian/Ubuntu (Recommended)
-* 20GB storage
-* 4GB RAM
-* x86 architecture
-* Static IP address
-* Exposed TCP port 9151
-
-Nodes can be run on cloud infrastructure - for example, a
-`Digital Ocean 4GB Basic Droplet <https://www.digitalocean.com/pricing/>`_
-satisfies the requirements listed above.
-
-The above requirements only apply if you intend to run a node yourself.
-Alternatively, a staking provider can run a node on your behalf.
-
-
-PRE Node Configuration Requirements
------------------------------------
-
-Ethereum Node Provider URI
-++++++++++++++++++++++++++
-
-The PRE node will need to execute an initial transaction to confirm its
-operation on startup, and therefore requires access to an
-`ethereum node <https://web3py.readthedocs.io/en/stable/node.html>`_
-(either a local or remote ethereum node) to broadcast the transaction. Remote
-ethereum providers include Infura, Alchemy etc. and an HTTPS URI will need to
-be configured (``https://<URI>``), whereas a local full node would entail running
-`geth <https://geth.ethereum.org/>`_ locally and configured using the
-IPC URI (``ipc://<PATH TO IPC FILE>``).
-This value will be provided via the ``--provider`` CLI parameter.
-
-It is worth noting that running a local ethereum node is quite the undertaking,
-and has its own
-`additional requirements <https://docs.ethhub.io/using-ethereum/running-an-ethereum-node/>`_.
-
-
-PRE Node Operator Account
-+++++++++++++++++++++++++
-
-A software wallet is recommended for the PRE node operator ethereum account
-since the account needs to remain unlocked to execute an automated transaction
-when the node first starts.
-
-.. caution::
-
-    - Operator accounts **do not** need NU/KEEP/T tokens for any reason; do not keep NU/KEEP/T in the
-      operator account.
-    - Do not store large amounts of ETH in the operator account; only enough to pay gas fees. Nodes
-      only need to execute a single transaction on the first start which costs ~100K gas at
-      a gas price of 146 gwei, this would be ~0.015 ETH). There are no subsequent transactions on restarts.
-    - Store the operator account password in a password manager
-
-To create a new ethereum software account using the ``geth`` CLI
-
-    .. code::
-
-        geth account new
-
-    - Never share your ethereum account password.
-    - Do not forget your ethereum account password.
-    - Secure your ethereum account password in a password manager.
-
-
-PRE Node Operator Transaction Signer
-++++++++++++++++++++++++++++++++++++
-
-In conjunction with an Ethereum node provider for broadcasting to the
-Ethereum blockchain, the node also needs to configure a transaction signer
-for signing messages to be broadcasted.
-
-This separation of a transaction signer from an Ethereum node allows pre-signed
-transactions to be sent to an external (possibly remote) ethereum node and is
-particularly desirable when interacting with an untrusted ethereum node.
-
-Local ethereum keystore signing can be configured for the operator software
-account. Local keystore signing utilizes `eth-account <https://github.com/ethereum/eth-account/>`_
-to sign ethereum transactions using local ethereum keystore files. By default
-on Linux, the default local keystore directory path is ``~/.ethereum/keystore``.
-The local keystore signer can be specified during initialization using the
-following URI format, ``--signer`` CLI parameter and ``keystore://<PATH TO LOCAL KEYSTORE>`` as the
-value, eg. ``--signer keystore:///root/.ethereum/keystore``.
-
-
 .. note::
 
-    The expectation is that the operator account is part of the local keystore.
-
-
-Running a PRE Node
-------------------
+    NuCypher maintains a separate self-contained CLI that automates the initialization
+    and management of PRE nodes deployed on cloud infrastructure. This CLI leverages
+    automation tools such as Ansible and Docker to simplify the setup and management
+    of nodes running in the cloud. See :ref:`managing-cloud-nodes`.
 
 Running a PRE node entails two steps:
 
@@ -118,14 +31,14 @@ All PRE node configuration information will be stored in ``/home/user/.local/sha
 
 
 Run Node via Docker (Recommended)
-+++++++++++++++++++++++++++++++++
+---------------------------------
 
 Running the node via a docker container negates the need to install ``nucypher`` locally.
 Instead, the node is run as part of a docker container which greatly simplifies the installation process.
 
 
 Setup Docker
-^^^^^^^^^^^^
+++++++++++++
 
 - Install `docker <https://docs.docker.com/install>`_.
 - *Optional* Depending on the setup you want, post install instructions, additional
@@ -138,7 +51,7 @@ Setup Docker
 
 
 Export Node Environment Variables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++
 
 These environment variables are used to better simplify the docker installation process.
 
@@ -152,7 +65,7 @@ These environment variables are used to better simplify the docker installation 
 
 
 Initialize Node Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++
 
 This step creates and stores the PRE node configuration, and only needs to be run once.
 
@@ -181,7 +94,7 @@ Replace the following values with your own:
 
 
 Launch the Node
-^^^^^^^^^^^^^^^
++++++++++++++++
 
 This step starts the PRE node.
 
@@ -198,7 +111,7 @@ This step starts the PRE node.
     nucypher ursula run
 
 View Node Logs
-^^^^^^^^^^^^^^
+++++++++++++++
 
 .. code:: bash
 
@@ -206,7 +119,7 @@ View Node Logs
 
 
 Upgrade the Node To a Newer Version
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++
 
 .. code:: bash
 
@@ -221,13 +134,13 @@ Upgrade the Node To a Newer Version
 
 
 Run Node without Docker
-+++++++++++++++++++++++
+-----------------------
 
 Instead of using docker, PRE nodes can be run using a local installation of ``nucypher``.
 
 
 Install ``nucypher``
-^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++
 
 - ``nucypher`` supports Python 3.7 and 3.8. If you don’t already have it, install `Python <https://www.python.org/downloads/>`_.
 - Create a `Virtual Environment <https://virtualenv.pypa.io/en/latest/>`_ in a folder
@@ -265,7 +178,7 @@ Instead of using docker, the node can be run as a `systemd <https://en.wikipedia
 
 
 Configure the node
-^^^^^^^^^^^^^^^^^^
+++++++++++++++++++
 
 .. code:: bash
 
@@ -284,7 +197,7 @@ Where:
 
 
 Create Node Service Template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++++++++
 
 Create a file named ``ursula.service`` in ``/etc/systemd/system``, and add this template to it
 
@@ -314,7 +227,7 @@ Replace the following values with your own:
 
 
 Enable Node Service
-^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++
 
 .. code:: bash
 
@@ -322,7 +235,7 @@ Enable Node Service
 
 
 Run Node Service
-^^^^^^^^^^^^^^^^
+++++++++++++++++
 
 .. code:: bash
 
@@ -330,7 +243,7 @@ Run Node Service
 
 
 Check Node Service Status
-^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++
 
 .. code:: bash
 
@@ -345,7 +258,7 @@ Check Node Service Status
 
 
 Restart Node Service
-^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++
 
 .. code:: bash
 
@@ -356,7 +269,7 @@ Run Node Manually
 +++++++++++++++++
 
 Configure the Node
-^^^^^^^^^^^^^^^^^^
+++++++++++++++++++
 
 If you’d like to use another own method of running the Node's process in the
 background,, here is how to run Ursula using the CLI directly.
@@ -431,8 +344,9 @@ Waiting for qualification:
 
 .. code:: bash
 
+    Defaulting to Ursula configuration file: '/root/.local/share/nucypher/ursula.json'
     Authenticating Ursula
-    Qualifying operator
+    Starting services
     ⓘ  Operator startup is paused. Waiting for bonding and funding ...
     ⓘ  Operator startup is paused. Waiting for bonding and funding ...
     ⓘ  Operator startup is paused. Waiting for bonding and funding …
@@ -443,19 +357,19 @@ Continuing startup after funding and bonding:
 
     ...
     ⓘ  Operator startup is paused. Waiting for bonding and funding ...
-    ✓ Operator is bonded to 0x37f320567b6C4dF121302EaED8A9B7029Fe09Deb
-    ✓ Operator is funded with 0.01 ETH
-    ✓ External IP matches configuration
+    ✓ Operator is funded with 0.641160744670608582 ETH
+    ✓ Operator 0x2507beC003324d1Ec7F42Cc03B95d213D2E0b238 is bonded to staking provider 0x4F29cC79B52DCc97db059B0E11730F9BE98F1959
+    ✓ Operator already confirmed.  Not starting worktracker.
     ...
     ✓ Rest Server https://1.2.3.4:9151
     Working ~ Keep Ursula Online!
 
 
 Node Status
-+++++++++++
+-----------
 
 Node Logs
-^^^^^^^^^
++++++++++
 
 A reliable way to check the status of a node is to view the logs.
 View logs for a docker-launched Ursula:
@@ -476,6 +390,6 @@ View logs for a CLI-launched or systemd Ursula:
 
 
 Node Status Page
-^^^^^^^^^^^^^^^^
+++++++++++++++++
 
 Once the node is running, you can view its public status page at ``https://<node_ip>:9151/status``.

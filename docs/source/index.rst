@@ -36,5 +36,8 @@ Contents
 
 .. toctree::
    :maxdepth: 1
+   :caption: Running a PRE Node
 
-   running_a_node
+   node_operation/node_requirements
+   node_operation/running_a_node
+   node_operation/remote_node_cli
