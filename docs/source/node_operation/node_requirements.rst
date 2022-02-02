@@ -40,10 +40,10 @@ and has its own
 `additional requirements <https://docs.ethhub.io/using-ethereum/running-an-ethereum-node/>`_.
 
 
-PRE Node Operator Account
-+++++++++++++++++++++++++
+Operator Software Ethereum Account
+++++++++++++++++++++++++++++++++++
 
-A software wallet is recommended for the PRE node operator ethereum account
+A software wallet is recommended for the PRE node operator's ethereum account
 since the account needs to remain unlocked to execute an automated transaction
 when the node first starts.
 
@@ -57,6 +57,7 @@ when the node first starts.
     - Store the operator account password in a password manager
 
 To create a new ethereum software account using the ``geth`` CLI
+(more information `here <https://geth.ethereum.org/>`_):
 
     .. code::
 
@@ -65,6 +66,8 @@ To create a new ethereum software account using the ``geth`` CLI
     - Never share your ethereum account password.
     - Do not forget your ethereum account password.
     - Secure your ethereum account password in a password manager.
+
+This command will add a new account to your local keystore.
 
 
 PRE Node Operator Transaction Signer
