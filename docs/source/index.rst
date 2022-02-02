@@ -40,4 +40,4 @@ Contents
 
    node_operation/node_requirements
    node_operation/running_a_node
-   node_operation/remote_node_cli
+   node_operation/cloud_node_management

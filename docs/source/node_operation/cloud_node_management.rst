@@ -9,7 +9,7 @@ such as `Ansible <https://www.ansible.com/>`_ and `Docker <https://www.docker.co
 
 .. important::
 
-    The CLI supports Digital Ocean and AWS cloud infrastructure.
+    Only supports Digital Ocean and AWS cloud infrastructure.
 
 This tool will handle the minutiae of node configuration and operation on your behalf by
 providing high-level CLI commands.
