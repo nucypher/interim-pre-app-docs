@@ -4,9 +4,7 @@ Documentation for the Interim PRE Application
 Building Documentation
 ----------------------
 
-.. _Read The Docs: https://nucypher.readthedocs.io/en/latest/
-
-Documentation for ``interim-pre-app-docs`` is hosted on `Read The Docs`_, and is
+Documentation for ``interim-pre-app-docs`` is hosted on Read The Docs, and
 automatically built and published to https://interim-pre-application-docs.readthedocs.io/en/latest/.
 
 However, you may want to build the documentation html locally for development.
