@@ -11,17 +11,6 @@ PRE Application on Threshold
 Welcome to documentation for the Proxy Re-Encryption (PRE) app, running on the Threshold network. In addition to staking T, stakers must operate and provide a reliable PRE service in order to be eligible for T rewards.
 This resource serves to guide prospective node operators through the set up and maintenance of a PRE client on their machine.
 
-Contents
---------
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Running a PRE Node
-
-   node_operation/node_requirements
-   node_operation/running_a_node
-   node_operation/cloud_node_management
-   node_operation/node_providers
 
 PRE Service Overview
 --------------------
@@ -57,3 +46,14 @@ Staker Subsidization (Rewards)
 
     In the traditional NuCypher Network parlance, ``Worker`` can be used interchangeably
     with the new Threshold Network ``Operator`` term.
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: Running a PRE Node
+
+   node_operation/node_requirements
+   node_operation/running_a_node
+   node_operation/cloud_node_management
+   node_operation/node_providers
