@@ -24,7 +24,6 @@ running the PRE node client.
 Nodes are expected to remain online to provide uninterrupted on-demand PRE
 services to the network of users.
 
-
 .. note::
 
     In the traditional NuCypher Network parlance, ``Worker`` can be used interchangeably
@@ -41,3 +40,4 @@ Contents
    node_operation/node_requirements
    node_operation/running_a_node
    node_operation/cloud_node_management
+   node_operation/node_providers
