@@ -38,14 +38,16 @@ Note that setting up a PRE node from scratch is non-trivial, but is typically in
 PRE end-users expect and require an on-demand service, wherein their *grant*, *revoke* and *re-encryption* requests are answered reliably, correctly, and without interruption.
 Hence the most critical responsibility for stakers is ensuring that their PRE node remains online **at all times**. If this is not certain using a local machine, it is highly recommended to use cloud infrastructure instead.
 
-Staker Subsidization (Rewards)
--------------------------------
-[WIP]
-
 .. note::
 
     In the traditional NuCypher Network parlance, ``Worker`` can be used interchangeably
     with the new Threshold Network ``Operator`` term.
+
+
+Staker Subsidization (Rewards)
+-------------------------------
+[WIP]
+
 
 
 .. toctree::
