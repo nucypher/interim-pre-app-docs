@@ -1,3 +1,4 @@
+.. _running-a-node:
 Running a PRE Node
 ==================
 
