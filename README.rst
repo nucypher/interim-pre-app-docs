@@ -4,32 +4,43 @@ Documentation for the Interim PRE Application
 Building Documentation
 ----------------------
 
-.. note::
-
-  ``sphinx`` and ``sphinx_rtd_theme`` are non-standard dependencies that can be installed
-  by running ``pip install -e . -r docs-requirements.txt`` from the project directory.
-
-
 .. _Read The Docs: https://nucypher.readthedocs.io/en/latest/
 
-Documentation for ``interim-pre-app-docs`` is hosted on `Read The Docs`_, and is automatically built.
+Documentation for ``interim-pre-app-docs`` is hosted on `Read The Docs`_, and is
+automatically built and published to https://interim-pre-application-docs.readthedocs.io/en/latest/.
 
 However, you may want to build the documentation html locally for development.
 
-To build the project dependencies locally on Linux:
+To build the project locally:
 
-.. code:: bash
+* Create virtual environment:
 
-    (nucypher)$ make docs
+    .. code:: bash
 
-or on MacOS:
+        $ pipenv shell
 
-.. code:: bash
+* Install documentation dependencies
 
-    (nucypher)$ make mac-docs
+    .. code:: bash
 
-If the build is successful, the resulting local documentation homepage, ``nucypher/docs/build/html/index.html``, will
-be automatically opened in the web browser.
+        (interim-pre-app-docs)$ pip install -e . -r docs-requirements.txt
+
+* Build the docs:
+
+    On Linux,
+
+    .. code:: bash
+
+        (interim-pre-app-docs)$ make docs
+
+    OR on MacOS:
+
+    .. code:: bash
+
+        (interim-pre-app-docs)$ make mac-docs
+
+If the build is successful, the resulting local documentation homepage, ``docs/build/html/index.html``, will
+be automatically opened in a web browser.
 
 .. note::
 
