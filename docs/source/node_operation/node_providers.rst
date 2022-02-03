@@ -1,7 +1,7 @@
 .. _node-providers:
 
 ===========================
-Node as a Service Providers
+Node-as-a-Service Providers
 ===========================
 
 You can delegate running a PRE node to one of the service providers listed below.

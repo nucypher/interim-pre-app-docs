@@ -1,13 +1,6 @@
 Node Requirements
 =================
 
-There are different strategies to running a PRE node:
-
-* **Node Delegation**: Delegate running a PRE node to a :ref:`Node-as-a-Service provider <node-providers>`. In this
-  case setup, operation, and monitoring of the PRE node is outsourced to a node-as-a-service provider.
-* **Self-Directed**: Run your own PRE node. In this case you are responsible for setup, operation, and monitoring
-  of the PRE node.
-
 Minimum System Requirements
 ---------------------------
 
