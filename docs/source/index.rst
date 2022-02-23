@@ -38,7 +38,7 @@ Staker Strategies & Responsibilities
 
 In order to provide the PRE service and receive rewards, T stakers have three options:
 
-* **Node Delegation**: Delegate running a PRE client to one of the participating :ref:`Node-as-a-Service providers<node-providers>`. In this
+* **Node Delegation**: Delegate running a PRE client to one of the participating *node-as-a-service* :ref:`Staking Providers<node-providers>`. In this
   case, the setup, operation, and monitoring is outsourced, and stakers need only check in occasionally to ensure the provider is handling things as expected.
 * **Self-Managed, Manual**: :ref:`Run<running-a-node>` your own PRE node and retain full purview and customization control over the machine(s), installation, dependencies and configuration. In this case, stakers are entirely responsible for setup, operation, and monitoring
   of the PRE client.
@@ -56,8 +56,12 @@ Hence the most critical responsibility for stakers is ensuring that their PRE no
 
 Staker Subsidization (Rewards)
 -------------------------------
-[WIP]
+Stakers who have successfully set up their PRE node (confirmed and activated via an on-chain transaction) are eligible to receive rewards, denominated in the native T token.
 
+The sum received will be proportional to one's relative stake size and the duration of time the staker has been active, but independent of the staking rate – i.e. issuance will be computed to target a `minimum yield <https://forum.threshold.network/t/threshold-network-reward-mechanisms-proposal-i-stable-yield-for-non-institutional-staker-welfare/82>`_.
+However, to avoid prejudicing against new stakers who have never run a PRE node previously, the first 1-2 months can be considered a 'grace period' in which all stakers will receive the full month's rewards, regardless of which day they commenced staking.
+
+The target yield and subsequent issuance (total number of tokens distributed monthly to stakers) will be determined by the Council, and will ramp up over the genesis era of the Threshold network.
 
 
 .. toctree::
