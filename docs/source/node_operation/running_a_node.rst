@@ -201,7 +201,7 @@ Configure the node
 
 Where:
 
-- ``<PROVIDER URI>``: The URI of the local or remote etheresum node eg. ``https://infura.io/…``
+- ``<PROVIDER URI>``: The URI of the local or remote ethereum node eg. ``https://infura.io/…``
 - ``<KEYSTORE URI>``: The URI of an ethereum keystore: eg. ``keystore:///root/.ethereum/keystore``
 - *Optional* ``<GWEI>`` - The `--max-gas-price` parameter is optional and not necesary
   if you don’t want to cap the price of gas for any transaction that needs to be performed by the node.
