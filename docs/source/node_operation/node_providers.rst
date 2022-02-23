@@ -4,7 +4,7 @@
 Staking Providers
 ===========================
 
-You can delegate running a PRE node to one of the 'node-as-a-service' Staking Providers listed below.
+You can delegate running a PRE node to one of the *node-as-a-service* Staking Providers listed below.
 
 .. warning::
   Staking Providers have not been vetted or endorsed by the core development team.

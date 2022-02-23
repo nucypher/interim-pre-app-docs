@@ -38,7 +38,7 @@ Staker Strategies & Responsibilities
 
 In order to provide the PRE service and receive rewards, T stakers have three options:
 
-* **Node Delegation**: Delegate running a PRE client to one of the participating :ref:`Staking Providers<node-providers>`. In this
+* **Node Delegation**: Delegate running a PRE client to one of the participating *node-as-a-service* :ref:`Staking Providers<node-providers>`. In this
   case, the setup, operation, and monitoring is outsourced, and stakers need only check in occasionally to ensure the provider is handling things as expected.
 * **Self-Managed, Manual**: :ref:`Run<running-a-node>` your own PRE node and retain full purview and customization control over the machine(s), installation, dependencies and configuration. In this case, stakers are entirely responsible for setup, operation, and monitoring
   of the PRE client.
